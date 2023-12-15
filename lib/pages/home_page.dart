@@ -15,7 +15,6 @@ class HomePageState extends State<HomePage> {
   //text controller
   final _controller = TextEditingController();
 
-  // list of todo tasks
   List toDoList = [
     ["Make Tutorial", false],
     ["Do exercise", false],
