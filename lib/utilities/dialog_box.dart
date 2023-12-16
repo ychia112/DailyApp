@@ -17,12 +17,14 @@ class DialogBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       backgroundColor: Colors.grey,
+      insetPadding: EdgeInsets.zero,
       content: Container(
         height: 120,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             TextField(
+              autofocus: true,
               controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
