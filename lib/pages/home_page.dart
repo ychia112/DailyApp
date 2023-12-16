@@ -68,41 +68,56 @@ class HomePageState extends State<HomePage> {
 
 
 
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text(
-          'Daily',
-          style: GoogleFonts.abrilFatface(
-              textStyle: const TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black
-              )
-          ),
-        ),
-        elevation: 0,
-      ),
-
-      body: GestureDetector(
-        onHorizontalDragEnd: (details) {
-          if (details.primaryVelocity! < 0) {
-            // Swiped from right to left
-            createNewTask();
-          }
-        },
-        child: ListView.builder(
-          itemCount: db.toDoList.length,
-          itemBuilder: (context, index) {
-            return ToDoTile(
-              taskName: db.toDoList[index][0],
-              taskCompleted: db.toDoList[index][1],
-              onChanged: (value) => checkBoxChanged(value, index),
-              deleteFunction: (context) => deleteTask(index),
-            );
-          },
+    return GestureDetector(
+      onHorizontalDragEnd: (details) {
+        if (details.primaryVelocity! < 0) {
+          // Swiped from right to left
+          createNewTask();
+        }
+      },
+      child: Scaffold(
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              expandedHeight: 200.0, // 設置擴展高度
+              backgroundColor: Colors.white,
+              centerTitle: false,
+              automaticallyImplyLeading: false,
+              flexibleSpace: FlexibleSpaceBar(
+                titlePadding: EdgeInsetsDirectional.only(
+                  start: 12.0,
+                  bottom: 12.0,
+                ),
+                centerTitle: false,
+                title: Text(
+                  'Daily',
+                  style: GoogleFonts.abrilFatface(
+                    textStyle: const TextStyle(
+                      fontSize: 48,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, int index) {
+                  // 返回你的列表項
+                  return ToDoTile(
+                    taskName: db.toDoList[index][0],
+                    taskCompleted: db.toDoList[index][1],
+                    onChanged: (value) => checkBoxChanged(value, index),
+                    deleteFunction: (context) => deleteTask(index),
+                  );
+                },
+                childCount: db.toDoList.length,
+              ),
+            ),
+          ],
         ),
       ),
     );
