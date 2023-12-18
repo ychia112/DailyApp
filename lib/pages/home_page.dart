@@ -4,6 +4,7 @@ import 'package:flutter_application_dailyapp/utilities/dialog_box.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utilities/todo_tile.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:flutter_application_dailyapp/utilities/month_summary.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,6 +43,7 @@ class HomePageState extends State<HomePage> {
     setState(() {
       db.toDoList.add([_controller.text, false]);
     });
+    _controller.clear();
     Navigator.of(context).pop();
     db.updateDatabase();
   }
@@ -81,8 +83,8 @@ class HomePageState extends State<HomePage> {
         body: CustomScrollView(
           slivers: <Widget>[
             SliverAppBar(
-              expandedHeight: 200.0, // 設置擴展高度
-              backgroundColor: Colors.white,
+              expandedHeight: 100.0, // 設置擴展高度
+              backgroundColor: Colors.transparent,
               centerTitle: false,
               automaticallyImplyLeading: false,
               flexibleSpace: FlexibleSpaceBar(
@@ -101,6 +103,12 @@ class HomePageState extends State<HomePage> {
                     ),
                   ),
                 ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: MonthlySummary(
+                datasets: db.heatMapDataSet,
+                startDate: _myBox.get("START_DATE"),
               ),
             ),
             SliverList(
