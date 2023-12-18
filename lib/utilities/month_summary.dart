@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
 import 'package:flutter_application_dailyapp/datetime/date_time.dart';
+import 'package:flutter_application_dailyapp/pages/history_page.dart';
 
 class MonthlySummary extends StatelessWidget {
   final Map<DateTime, int>? datasets;
@@ -40,9 +41,13 @@ class MonthlySummary extends StatelessWidget {
           9: Color.fromARGB(220, 2, 179, 8),
           10: Color.fromARGB(255, 2, 179, 8),
         },
-        onClick: (value) {
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text(value.toString())));
+        onClick: (value){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HistoryPage(value: value),
+            ),
+          );
         },
       ),
     );

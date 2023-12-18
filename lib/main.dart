@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'pages/history_page.dart';
 
 void main() async {
   //init the hive

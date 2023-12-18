@@ -6,6 +6,10 @@ class ToDoDataBase{
   List toDoList = [];
   Map<DateTime, int> heatMapDataSet = {};
 
+  List getToDoListByDate(DateTime date) {
+    String formattedDate = convertDateTimeToString(date);
+    return _myBox.get(formattedDate) ?? [];
+  }
 
   //first time opening this app
   void createInitialData(){
