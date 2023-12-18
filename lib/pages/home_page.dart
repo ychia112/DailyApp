@@ -26,6 +26,7 @@ class HomePageState extends State<HomePage> {
     } else {
       db.loadData();
     }
+    db.updateDatabase();
     super.initState();
   }
 

@@ -76,8 +76,8 @@ class _HistoryPageState extends State<HistoryPage> {
                 return ToDoTile(
                   taskName: toDoListForSelectedDate[index][0],
                   taskCompleted: toDoListForSelectedDate[index][1],
-                  onChanged: (value) => checkBoxChanged(value, index),
-                  deleteFunction: (context) => deleteTask(index),
+                  onChanged: null,
+                  deleteFunction: null,
                 );
               },
               childCount: toDoListForSelectedDate.length,

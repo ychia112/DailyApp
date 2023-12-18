@@ -37,9 +37,9 @@ class ToDoDataBase{
   void updateDatabase(){
     _myBox.put(todaysDateFormatted(), toDoList);
     _myBox.put("TODOLIST", toDoList);
+
     calculateHabitPercentages();
     loadHeatMap();
-
   }
   void calculateHabitPercentages() {
     int countCompleted = 0;
