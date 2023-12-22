@@ -62,7 +62,7 @@ class _HistoryPageState extends State<HistoryPage> {
                 style: GoogleFonts.abrilFatface(
                   textStyle: const TextStyle(
                     fontSize: 24,
-                    fontWeight: FontWeight.normal,
+                    fontWeight: FontWeight.w100,
                     color: Colors.black,
                   ),
                 ),
