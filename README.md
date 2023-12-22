@@ -1,16 +1,48 @@
-# flutter_application_dailyapp
+# Daily - An App for Recording Daily Tasks and Completion Progress
+**Note: This project was inspired by [HabitTrackerFlutter](https://github.com/mitchkoko/HabitTrackerFlutter).**
 
-A new Flutter project.
 
-## Getting Started
+## Key Features
 
-This project is a starting point for a Flutter application.
+### 1. Clean and Intuitive Interface
 
-A few resources to get you started if this is your first Flutter project:
+Enjoy a clutter-free and user-friendly interface that allows you to quickly and easily manage your daily tasks without unnecessary distractions.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 2. Heatmap Completion Tracking
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Visualize your task completion progress using a heatmap (inspired by GitHub). The heatmap provides a graphical representation of your accomplishments, allowing you to see patterns and trends over time.
+
+### 3. Past Daily Task History
+
+Daily helps you keep a record of tasks completed each day, allowing you to reflect on past achievements and stay motivated in your daily endeavors.
+
+
+## Installation
+
+To run Daily on your own device, follow these steps:
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/ychia112/DailyApp.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd DailyApp
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    flutter pub get
+    ```
+
+4. Run the application in release mode:
+
+    ```bash
+    flutter run --release
+    ```
+
+Now, the application will be running in release mode on your device.
