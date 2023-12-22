@@ -1,6 +1,8 @@
 # Daily - An App for Recording Daily Tasks and Completion Progress
 **Note: This project was inspired by [HabitTrackerFlutter](https://github.com/mitchkoko/HabitTrackerFlutter).**
 
+![Icon of Daily](assets/Daily_app_icon.png)
+
 
 ## Key Features
 
@@ -12,10 +14,13 @@ Enjoy a clutter-free and user-friendly interface that allows you to quickly and 
 
 Visualize your task completion progress using a heatmap (inspired by GitHub). The heatmap provides a graphical representation of your accomplishments, allowing you to see patterns and trends over time.
 
+![Interface of Daily](images/IMG_1047.jpg)
+
 ### 3. Past Daily Task History
 
 Daily helps you keep a record of tasks completed each day, allowing you to reflect on past achievements and stay motivated in your daily endeavors.
 
+![Interface of Daily](images/IMG_1048.jpg)
 
 ## Installation
 
